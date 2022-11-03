@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
     public Animator animator;
+    public Animator rebel;
+    public Animator wolfie;
+    public string levelName;
     private GameObject player;
     public bool animationFinished = false;
     public bool coroutineRun;
@@ -22,6 +26,8 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         animator.SetBool("IsOpen", true);
+        rebel.SetBool("IsOpen", true);
+        wolfie.SetBool("IsOpen", true);
     
         if(!coroutineRun)
         {
@@ -49,6 +55,7 @@ public class DialogueManager : MonoBehaviour
         if(sentences.Count == 0)
         {
             EndDialogue();
+            SceneManager.LoadScene(levelName);
             return;
         }
         string sentence = sentences.Dequeue();
@@ -69,19 +76,16 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        rebel.SetBool("IsOpen", false);
+        wolfie.SetBool("IsOpen", false);
+        Invoke("ResumeGame", 2.0f);
     }
 
-    public IEnumerator wait()
+    IEnumerator wait()
     {
-        float elapsed = 0;
-         while (elapsed < 1.0f)
-        {
-            elapsed += Time.deltaTime;
-
-            yield return null;
-        }
-        animationFinished = true;
-        coroutineRun = false;
+       print(Time.time);
+       yield return new WaitForSeconds(4);
+       print(Time.time);
     }
 
     void ResumeGame ()

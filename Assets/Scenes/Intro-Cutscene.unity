@@ -172,6 +172,7 @@ MonoBehaviour:
   animator: {fileID: 1102647929}
   rebel: {fileID: 1342713225}
   wolfie: {fileID: 1947674850}
+  levelName: BaseLevel
   animationFinished: 0
   coroutineRun: 0
   val: 0
@@ -507,10 +508,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Wolfie Jr
+    name: Intro
     sentences:
-    - Hey there! My name is Wolfie Jr and I need some help beating my big brother
-      Wolfie in the Wolf Pack Mini Golf Tournament
+    - 'Wolfie: Hey there! My name is Wolfie Jr and Welcome to the Wolfpack Tournament. '
+    - 'Wolfie: This is where you will face off in 6 mini mighty holes of golf against
+      my rival Hey Reb!'
+    - 'Hey Reb!: If this is anything like last years matchup it won''t take me long
+      to beat you!'
+    - 'Hey Reb!: I am ready if you are?!'
 --- !u!114 &698989134
 MonoBehaviour:
   m_ObjectHideFlags: 0
