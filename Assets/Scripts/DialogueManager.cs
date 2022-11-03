@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -9,9 +10,13 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
     public Animator animator;
+    public Animator rebel;
+    public Animator wolfie;
+    public string levelName;
     private GameObject player;
     public bool animationFinished = false;
     public bool coroutineRun;
+    public bool needWait = false;
     public int val = 0;
     // Start is called before the first frame update
     void Start()
@@ -22,12 +27,14 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         animator.SetBool("IsOpen", true);
+        rebel.SetBool("IsOpen", true);
+        wolfie.SetBool("IsOpen", true);
     
-        if(!coroutineRun)
-        {
-            coroutineRun = true;
-            StartCoroutine(wait());
-        }
+        // if(!coroutineRun)
+        // {
+        //     coroutineRun = true;
+        //     StartCoroutine(wait());
+        // }
         
         sentences.Clear();
 
@@ -48,7 +55,7 @@ public class DialogueManager : MonoBehaviour
         val++;
         if(sentences.Count == 0)
         {
-            EndDialogue();
+            EndDialogue();    
             return;
         }
         string sentence = sentences.Dequeue();
@@ -69,19 +76,15 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        rebel.SetBool("IsOpen", false);
+        wolfie.SetBool("IsOpen", false);
+        StartCoroutine(wait());
     }
 
-    public IEnumerator wait()
+    IEnumerator wait() 
     {
-        float elapsed = 0;
-         while (elapsed < 1.0f)
-        {
-            elapsed += Time.deltaTime;
-
-            yield return null;
-        }
-        animationFinished = true;
-        coroutineRun = false;
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(levelName);  
     }
 
     void ResumeGame ()
