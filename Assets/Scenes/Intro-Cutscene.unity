@@ -172,9 +172,10 @@ MonoBehaviour:
   animator: {fileID: 1102647929}
   rebel: {fileID: 1342713225}
   wolfie: {fileID: 1947674850}
-  levelName: BaseLevel
+  levelName: Course1
   animationFinished: 0
   coroutineRun: 0
+  needWait: 0
   val: 0
 --- !u!1 &393151289
 GameObject:
