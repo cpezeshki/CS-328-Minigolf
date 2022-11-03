@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     private GameObject player;
     public bool animationFinished = false;
     public bool coroutineRun;
+    public bool needWait = false;
     public int val = 0;
     // Start is called before the first frame update
     void Start()
@@ -29,11 +30,11 @@ public class DialogueManager : MonoBehaviour
         rebel.SetBool("IsOpen", true);
         wolfie.SetBool("IsOpen", true);
     
-        if(!coroutineRun)
-        {
-            coroutineRun = true;
-            StartCoroutine(wait());
-        }
+        // if(!coroutineRun)
+        // {
+        //     coroutineRun = true;
+        //     StartCoroutine(wait());
+        // }
         
         sentences.Clear();
 
@@ -54,8 +55,7 @@ public class DialogueManager : MonoBehaviour
         val++;
         if(sentences.Count == 0)
         {
-            EndDialogue();
-            SceneManager.LoadScene(levelName);
+            EndDialogue();    
             return;
         }
         string sentence = sentences.Dequeue();
@@ -78,14 +78,13 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", false);
         rebel.SetBool("IsOpen", false);
         wolfie.SetBool("IsOpen", false);
-        Invoke("ResumeGame", 2.0f);
+        StartCoroutine(wait());
     }
 
-    IEnumerator wait()
+    IEnumerator wait() 
     {
-       print(Time.time);
-       yield return new WaitForSeconds(4);
-       print(Time.time);
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(levelName);  
     }
 
     void ResumeGame ()
