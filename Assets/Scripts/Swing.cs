@@ -13,7 +13,7 @@ public class Swing : MonoBehaviour
     bool swung;
 
     // Start is called before the first frame update
-    void Start()
+    void Start ()
     {
         aiming = true;
         swinging = false;
@@ -25,7 +25,7 @@ public class Swing : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update ()
     {
         aiming = GameObject.Find ("Aim") != null;
         swinging = GameObject.Find ("Power") != null;
@@ -42,14 +42,14 @@ public class Swing : MonoBehaviour
         }
         else
         {
-            if (aimed == false && swung == true)
+            if (!aimed && swung == true)
             {
-                aimController.SetActive(true);
+                aimController.SetActive (true);
             }
 
-            if (aimed == true && swung == false)
+            if (aimed && !swung)
             {
-                powerController.SetActive(true);
+                powerController.SetActive (true);
             }
         }
     }

@@ -14,7 +14,7 @@ public class Power : MonoBehaviour
     Rigidbody golfball;
     Transform indicator;
 
-    void Start()
+    void Start ()
     {
         increasing = true;
         strength = minStrength;
@@ -23,7 +23,7 @@ public class Power : MonoBehaviour
         indicator = transform.GetChild(0).transform;
     }
 
-    void Update()
+    void Update ()
     {
         Vector3 indicatorLevel = indicator.position;
 
