@@ -4,110 +4,55 @@ using UnityEngine;
 
 public class Power : MonoBehaviour
 {
-    bool powerMode;
-    bool reachedMaxPower;
-    bool coroutineRunning;
+    public float strengthMultiplier = 0.1f;
+    public int minStrength = 1;
+    public int maxStrength = 100;
+
+    bool increasing;
     int strength;
 
-    Vector3 power;
     Rigidbody golfball;
-    GameObject indicator;
+    Transform indicator;
 
     void Start()
     {
-        powerMode = false;
-        reachedMaxPower = false;
-        coroutineRunning = false;
-        strength = 0;
+        increasing = true;
+        strength = minStrength;
 
-        power = Vector3.zero;
         golfball = GetComponentInParent <Rigidbody> ();
-        indicator = transform.GetChild(0).gameObject;
-
-        indicator.SetActive(false);
+        indicator = transform.GetChild(0).transform;
     }
 
     void Update()
     {
-        /*
-        *   player sets the power of the swing
-        */
-        if (powerMode)
+        Vector3 indicatorLevel = indicator.position;
+
+        if (increasing)
         {
-            StartCoroutine (setSwingPower ());
-
-            // wait until swing power is set
-            while (coroutineRunning);
-
-            power = new Vector3 (strength, 0, 0);
-
-            golfball.AddRelativeForce (power, ForceMode.Impulse);
-
-            /*
-            *   destroy this object once swing is 
-            *   finished
-            */
-            GameObject.Destroy(this);
+            strength += 1;
+            indicatorLevel.y += 0.002f;
         }
         else
         {
-            StopCoroutine (setSwingPower ());
-        }
-
-        /*
-        *   handles entering power mode 
-        */
-        if (Input.GetKeyUp (KeyCode.S) && powerMode == false)
-        {
-            powerMode = true;
-        }
-    }
-
-    IEnumerator setSwingPower ()
-    {
-        Vector3 indicatorPosition = indicator.transform.position;
-
-        coroutineRunning = true;
-
-        indicator.SetActive(true);
-
-        if (strength == 0)
-        {
-            reachedMaxPower = false;
-        }
-
-        if (strength == 100)
-        {
-            reachedMaxPower = true;
-        }
-
-        if (strength < 100 && reachedMaxPower == false)
-        {
-            strength += 1;
-
-            indicatorPosition.y += 0.002f;
-        }
-
-        if (strength > 0 && reachedMaxPower == true)
-        {
             strength -= 1;
-
-            indicatorPosition.y -= 0.002f;
+            indicatorLevel.y -= 0.002f;
         }
 
-        yield return null;
-
-        /*
-        *   power variable stops changing when the 
-        *   player presses the spacebar
-        */
-        if (Input.GetKeyUp (KeyCode.S))
+        if (strength == minStrength)
         {
-            indicator.SetActive(false);
+            increasing = true;
+        }
 
-            coroutineRunning = false;
+        if (strength == maxStrength)
+        {
+            increasing = false;
+        }
 
-            StopCoroutine (setSwingPower ());
+        if (Input.GetKeyUp (KeyCode.Space))
+        {
+            golfball.AddRelativeForce (strength * Vector3.forward, ForceMode.Impulse);
+
+            gameObject.SetActive (false);
         }
     }
 }

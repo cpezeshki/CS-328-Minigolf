@@ -4,63 +4,19 @@ using UnityEngine;
 
 public class Aim : MonoBehaviour
 {
-    bool aimMode;
-    bool coroutineRunning;
     int direction;
 
     Transform golfball;
-    GameObject indicator;
 
     void Start()
     {
-        aimMode = false;
-        coroutineRunning = false;
         direction = 0;
 
-        golfball = GetComponentInParent <Transform> ();
-        indicator = transform.GetChild (0).gameObject;
-
-        indicator.SetActive (false);
+        golfball = GameObject.Find ("Golfball").GetComponent <Transform> ();
     }
 
     void Update()
     {
-        /*
-        *   player sets the direction of the swing
-        */
-        if (aimMode)
-        {
-            StartCoroutine (setSwingDirection ());
-
-            // wait until swing direction is set
-            while (coroutineRunning);
-
-            /*
-            *   destroy this object once direction 
-            *   is set
-            */
-            GameObject.Destroy (this);
-        }
-        else
-        {
-            StopCoroutine (setSwingDirection ());
-        }
-
-        /*
-        *   handles entering aim mode
-        */
-        if (Input.GetKeyUp(KeyCode.A) && aimMode == false)
-        {
-            aimMode = true;
-        }
-    }
-
-    IEnumerator setSwingDirection ()
-    {
-        coroutineRunning = true;
-
-        indicator.SetActive (true);
-
         direction += 1;
 
         if (direction == 360)
@@ -70,19 +26,11 @@ public class Aim : MonoBehaviour
 
         golfball.rotation = Quaternion.Euler (0, direction, 0);
 
-        yield return null;
-
-        /*
-        *   direction variable stops changing when \
-        *   the player presses the spacebar
-        */
-        if (Input.GetKeyUp (KeyCode.A))
+        if (Input.GetKeyUp (KeyCode.Space))
         {
-            indicator.SetActive (false);
-
-            coroutineRunning = false;
-
-            StopCoroutine(setSwingDirection ());
+            gameObject.SetActive (false);
         }
     }
+
+    
 }

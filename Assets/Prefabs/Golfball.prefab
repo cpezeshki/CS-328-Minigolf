@@ -154,8 +154,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3985345922720000884}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.10000038}
-  m_LocalScale: {x: 0.01, y: 0.10000002, z: 0.009999998}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1}
+  m_LocalScale: {x: 0.01, y: 0.10000002, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8950989212327908790}
@@ -259,6 +259,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimController: {fileID: 1520693215431134567}
   powerController: {fileID: 7570467010812774939}
+  aiming: 0
+  swinging: 0
+  aimed: 0
+  swung: 0
 --- !u!1 &7570467010812774939
 GameObject:
   m_ObjectHideFlags: 0

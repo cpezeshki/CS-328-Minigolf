@@ -15,10 +15,13 @@ public class Swing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        aiming = false;
+        aiming = true;
         swinging = false;
         aimed = false;
-        swung = false;
+        swung = true;
+
+        aimController.SetActive (true);
+        powerController.SetActive (false);
     }
 
     // Update is called once per frame
@@ -27,28 +30,27 @@ public class Swing : MonoBehaviour
         aiming = GameObject.Find ("Aim") != null;
         swinging = GameObject.Find ("Power") != null;
 
-        if (Input.GetKeyUp (KeyCode.Space) && aiming == false && swinging == false && aimed == false && swung == false)
+        if (aiming)
         {
-            GameObject aim = Instantiate (aimController) as GameObject;
-            aim.transform.parent = transform;
-            aim.SetActive (true);
-
             aimed = true;
-        }
-
-        if (Input.GetKeyUp (KeyCode.Space) && aiming == false && swinging == false && aimed == true && swung == false)
-        {
-            GameObject power = Instantiate (powerController) as GameObject;
-            power.transform.parent = transform;
-            power.SetActive (true);
-
-            swung = true;
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space) && aiming == false && swinging == false && aimed == true && swung == true)
-        {
-            aimed = false;
             swung = false;
+        }
+        else if (swinging)
+        {
+            swung = true;
+            aimed = false;
+        }
+        else
+        {
+            if (aimed == false && swung == true)
+            {
+                aimController.SetActive(true);
+            }
+
+            if (aimed == true && swung == false)
+            {
+                powerController.SetActive(true);
+            }
         }
     }
 }
