@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Power : MonoBehaviour
 {
-    public float strengthMultiplier = 0.1f;
     public int minStrength = 1;
     public int maxStrength = 100;
+    public float strengthMultiplier = 0.1f;
 
     bool increasing;
     int strength;
 
     Rigidbody golfball;
-    Transform indicator;
 
     void Start ()
     {
@@ -20,12 +19,11 @@ public class Power : MonoBehaviour
         strength = minStrength;
 
         golfball = GetComponentInParent <Rigidbody> ();
-        indicator = transform.GetChild(0).transform;
     }
 
     void Update ()
     {
-        Vector3 indicatorLevel = indicator.position;
+        Vector3 indicatorLevel = GameObject.Find ("Power Indicator").GetComponent <Transform> ().position;
 
         if (increasing)
         {

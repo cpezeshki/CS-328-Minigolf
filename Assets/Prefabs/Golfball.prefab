@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1623999252362931265}
   - component: {fileID: 1632126507298989923}
   m_Layer: 0
-  m_Name: Indicator
+  m_Name: Power Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45227b5245f7630448db9fda5e2c9388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSpeed: 0.1
 --- !u!1 &3985345922720000884
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +141,7 @@ GameObject:
   - component: {fileID: 7723580488763007186}
   - component: {fileID: 681189668120551621}
   m_Layer: 0
-  m_Name: Indicator
+  m_Name: Aim Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,10 +260,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimController: {fileID: 1520693215431134567}
   powerController: {fileID: 7570467010812774939}
-  aiming: 0
-  swinging: 0
-  aimed: 0
-  swung: 0
 --- !u!1 &7570467010812774939
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +305,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2639d39e4068a47a4c7aca0f0bcb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minStrength: 1
+  maxStrength: 100
+  strengthMultiplier: 0.1
 --- !u!1 &7600828354334036373
 GameObject:
   m_ObjectHideFlags: 0
