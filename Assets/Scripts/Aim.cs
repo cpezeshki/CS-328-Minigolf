@@ -21,25 +21,27 @@ public class Aim : MonoBehaviour
 
     void Update()
     {
-        belowMinSpeed = GameObject.Find("Golfball").GetComponent <Rigidbody> ().velocity.magnitude < minSpeed;
-
+        belowMinSpeed = GameObject.Find ("Golfball").GetComponent <Rigidbody> ().velocity.magnitude < minSpeed;
 
         GameObject.Find ("Aim Indicator").GetComponent <MeshRenderer> ().enabled = belowMinSpeed;
 
-        direction += 1;
-
-        if (direction == 360)
+        if (belowMinSpeed)
         {
-            direction = 0;
-        }
+            GameObject.Find ("Golfball").GetComponent <Rigidbody> ().velocity = Vector3.zero;
 
-        golfball.rotation = Quaternion.Euler (0, direction, 0);
+            direction += 1;
 
-        if (Input.GetKeyUp (KeyCode.Space) && belowMinSpeed)
-        {
-            GameObject.Find("Golfball").GetComponent<Rigidbody>().velocity = Vector3.zero;
+            if (direction == 360)
+            {
+                direction = 0;
+            }
 
-            gameObject.SetActive (false);
+            golfball.rotation = Quaternion.Euler (0, direction, 0);
+
+            if (Input.GetKeyUp (KeyCode.Space) && belowMinSpeed)
+            {
+                gameObject.SetActive (false);
+            }
         }
     }
 
