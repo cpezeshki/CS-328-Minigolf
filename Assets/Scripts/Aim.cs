@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Aim : MonoBehaviour
 {
+    public float sensitivity = 3;
+    // the speed threshold before starting a new turn
     public float minSpeed = 0.1f;
 
     bool belowMinSpeed;
-    int direction;
+    float direction;
 
     Transform golfball;
 
@@ -27,21 +29,16 @@ public class Aim : MonoBehaviour
 
         if (belowMinSpeed)
         {
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                gameObject.SetActive(false);
+            }
+
             GameObject.Find ("Golfball").GetComponent <Rigidbody> ().velocity = Vector3.zero;
 
-            direction += 1;
-
-            if (direction == 360)
-            {
-                direction = 0;
-            }
+            direction += Input.GetAxis ("Mouse X") * sensitivity;
 
             golfball.rotation = Quaternion.Euler (0, direction, 0);
-
-            if (Input.GetKeyUp (KeyCode.Space) && belowMinSpeed)
-            {
-                gameObject.SetActive (false);
-            }
         }
     }
 
