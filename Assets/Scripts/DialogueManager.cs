@@ -29,12 +29,6 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", true);
         rebel.SetBool("IsOpen", true);
         wolfie.SetBool("IsOpen", true);
-    
-        // if(!coroutineRun)
-        // {
-        //     coroutineRun = true;
-        //     StartCoroutine(wait());
-        // }
         
         sentences.Clear();
 
@@ -45,18 +39,30 @@ public class DialogueManager : MonoBehaviour
         {
         sentences.Enqueue(sentence);
         }
-        DisplayNextSentence();
-        
+        DisplayNextSentence();  
     }
 
     public void DisplayNextSentence()
     {
+
         Debug.Log("This is triggering");
         val++;
         if(sentences.Count == 0)
         {
             EndDialogue();    
             return;
+        }
+        else if(sentences.Count %2 == 0)
+        {
+          Debug.Log("Even"); 
+          wolfie.SetBool("Talk", true);
+          rebel.SetBool("Talk", false);   
+        }
+        else if(sentences.Count %2 == 1)
+        {
+            Debug.Log("Odd");
+            wolfie.SetBool("Talk", false);
+            rebel.SetBool("Talk", true);
         }
         string sentence = sentences.Dequeue();
         StopAllCoroutines();

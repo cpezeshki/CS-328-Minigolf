@@ -18,5 +18,27 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
         transform.position = player.transform.position + offset;
+        
+
+
+        // if(inputX != 0)
+        // {
+        //     transform.RotateAround(player.transform.position, Vector3.up, 20 * Time.deltaTime);
+        // }
+        
+        // if (Input.GetKeyUp(KeyCode.RightArrow))
+        // {
+        //     transform.Rotate (new Vector3 (0f, inputX * Time.deltaTime, 0f));
+        // }
+        // if (Input.GetKeyUp(KeyCode.LeftArrow))
+        // {
+        //     transform.Rotate (new Vector3 (0f, 5 * Time.deltaTime, 0f));
+        // }
     }
 }
+// var target:transform;
+ 
+// function Update(){
+//     transform.LookAt(target);
+//     transform.Translate(Vector3.right * Time.deltaTime);
+// }
