@@ -6,6 +6,7 @@ public class Swing : MonoBehaviour
 {
     public GameObject aimController;
     public GameObject powerController;
+    public GameObject scoreTracker;
 
     bool aiming;
     bool swinging;
@@ -42,7 +43,7 @@ public class Swing : MonoBehaviour
         }
         else
         {
-            if (!aimed && swung == true)
+            if (!aimed && swung)
             {
                 aimController.SetActive (true);
             }
@@ -50,6 +51,9 @@ public class Swing : MonoBehaviour
             if (aimed && !swung)
             {
                 powerController.SetActive (true);
+
+                // not exactly how swings should be tracked but this is good for now
+                scoreTracker.GetComponent<Scoring>().swings += 1;
             }
         }
     }

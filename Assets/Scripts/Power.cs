@@ -6,12 +6,13 @@ public class Power : MonoBehaviour
 {
     public int minStrength = 1;
     public int maxStrength = 100;
-    public float strengthMultiplier = 0.1f;
+    public float strengthFactor = 0.1f;
 
     bool increasing;
     int strength;
 
     Rigidbody golfball;
+    Vector3 originalIndicatorPosition;
 
     void Start ()
     {
@@ -23,17 +24,17 @@ public class Power : MonoBehaviour
 
     void Update ()
     {
-        Vector3 indicatorLevel = GameObject.Find ("Power Indicator").GetComponent <Transform> ().position;
+        Transform indicatorLevel = GameObject.Find ("Power Indicator").GetComponent <Transform> ();
 
         if (increasing)
         {
             strength += 1;
-            indicatorLevel.y += 0.002f;
+            indicatorLevel.position += new Vector3 (0, 0.002f);
         }
         else
         {
             strength -= 1;
-            indicatorLevel.y -= 0.002f;
+            indicatorLevel.position -= new Vector3 (0, 0.002f);
         }
 
         if (strength == minStrength)
@@ -48,7 +49,7 @@ public class Power : MonoBehaviour
 
         if (Input.GetKeyUp (KeyCode.Space))
         {
-            golfball.AddRelativeForce (strength * Vector3.forward, ForceMode.Impulse);
+            golfball.AddRelativeForce (strength * strengthFactor * Vector3.forward, ForceMode.Impulse);
 
             gameObject.SetActive (false);
         }
