@@ -19,6 +19,7 @@ public class RotatorScript : MonoBehaviour
         transform.position = player.transform.position + offset;
     }
     
+    
     // Update is called once per frame
     void Update()
     {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2041,6 +2041,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!135 &767200097
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767200092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.076
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &785039325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4662,6 +4675,8 @@ GameObject:
   - component: {fileID: 1662246781}
   - component: {fileID: 1662246783}
   - component: {fileID: 1662246782}
+  - component: {fileID: 1662246784}
+  - component: {fileID: 1662246785}
   m_Layer: 0
   m_Name: holePocket
   m_TagString: Untagged
@@ -4677,7 +4692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662246780}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.6465282, y: -2.2517893, z: 0.8671322}
+  m_LocalPosition: {x: -1.6465282, y: -2.24, z: 0.8671322}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4734,6 +4749,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662246780}
   m_Mesh: {fileID: 4847799090259962406, guid: b770f0594fb55294d96fe4de774b025d, type: 3}
+--- !u!135 &1662246784
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662246780}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Center: {x: 0.000015258793, y: -0.039510015, z: 0.0000016689304}
+--- !u!114 &1662246785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662246780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1142852378dd142b5cf83493bc83b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelSelect: MainMenu
 --- !u!1001 &1674547028
 PrefabInstance:
   m_ObjectHideFlags: 0
