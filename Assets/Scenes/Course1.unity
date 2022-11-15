@@ -1523,6 +1523,7 @@ GameObject:
   - component: {fileID: 584702368}
   - component: {fileID: 584702370}
   - component: {fileID: 584702369}
+  - component: {fileID: 584702371}
   m_Layer: 0
   m_Name: slide
   m_TagString: Untagged
@@ -1594,6 +1595,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584702367}
+  m_Mesh: {fileID: -6845817467717305566, guid: 06d8c937bc30f0842acf322292317ab7, type: 3}
+--- !u!64 &584702371
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584702367}
+  m_Material: {fileID: 13400000, guid: d921f8e4f964fdd469b0159a0f74544d, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -6845817467717305566, guid: 06d8c937bc30f0842acf322292317ab7, type: 3}
 --- !u!4 &586118841 stripped
 Transform:
@@ -5334,6 +5349,7 @@ GameObject:
   - component: {fileID: 1900520032}
   - component: {fileID: 1900520034}
   - component: {fileID: 1900520033}
+  - component: {fileID: 1900520035}
   m_Layer: 0
   m_Name: blockade
   m_TagString: Untagged
@@ -5405,6 +5421,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900520031}
+  m_Mesh: {fileID: 4848604837377365441, guid: fa07439916ec1d4468fb0d690937f9bf, type: 3}
+--- !u!64 &1900520035
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900520031}
+  m_Material: {fileID: 13400000, guid: d921f8e4f964fdd469b0159a0f74544d, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4848604837377365441, guid: fa07439916ec1d4468fb0d690937f9bf, type: 3}
 --- !u!4 &1913724343 stripped
 Transform:
