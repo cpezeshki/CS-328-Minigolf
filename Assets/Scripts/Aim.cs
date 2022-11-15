@@ -13,6 +13,8 @@ public class Aim : MonoBehaviour
 
     Transform golfball;
 
+    public GameObject mulligen;
+
     void Start()
     {
         belowMinSpeed = false;
@@ -32,6 +34,7 @@ public class Aim : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 gameObject.SetActive(false);
+                mulligen.GetComponent<MulligenScript>().SavePlayerPosition();
             }
 
             GameObject.Find ("Golfball").GetComponent <Rigidbody> ().velocity = Vector3.zero;

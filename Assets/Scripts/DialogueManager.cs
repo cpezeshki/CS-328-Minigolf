@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
     public Animator rebel;
     public Animator wolfie;
+    public Animator upgrade;
     public string levelName;
     private GameObject player;
     public bool animationFinished = false;
@@ -64,6 +65,13 @@ public class DialogueManager : MonoBehaviour
             wolfie.SetBool("Talk", false);
             rebel.SetBool("Talk", true);
         }
+        if(sentences.Count == 2)
+        {
+            if(upgrade != null)
+            {
+                upgrade.SetBool("IsOpen", true);
+            }
+        }
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
@@ -78,6 +86,10 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
         
+    }
+    public void UpgradeChoice()
+    {
+        upgrade.SetBool("IsOpen", false);
     }
     public void EndDialogue()
     {
