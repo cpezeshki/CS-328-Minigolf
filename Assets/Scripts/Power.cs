@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Power : MonoBehaviour
 {
+    public float sensitivity = 3;
     public int minStrength = 1;
     public int maxStrength = 100;
     public float strengthFactor = 0.1f;
 
-    bool increasing;
-    int strength;
+    public GameObject Aim;
+
+    float strength;
 
     Rigidbody golfball;
-    Vector3 originalIndicatorPosition;
 
     void Start ()
     {
-        increasing = true;
         strength = minStrength;
 
         golfball = GetComponentInParent <Rigidbody> ();
@@ -24,30 +24,36 @@ public class Power : MonoBehaviour
 
     void Update ()
     {
-        Transform indicatorLevel = GameObject.Find ("Power Indicator").GetComponent <Transform> ();
+        float strengthChange;
+        float difference;
 
-        if (increasing)
-        {
-            strength += 1;
-            indicatorLevel.position += new Vector3 (0, 0.002f);
-        }
-        else
-        {
-            strength -= 1;
-            indicatorLevel.position -= new Vector3 (0, 0.002f);
-        }
+        Transform indicatorLevel;
+        golfball.rotation = Quaternion.Euler(0, Aim.GetComponent <Aim> ().direction, 0);
 
-        if (strength == minStrength)
-        {
-            increasing = true;
-        }
+        difference = 0;
 
-        if (strength == maxStrength)
+        if (!Input.GetMouseButtonUp (0))
         {
-            increasing = false;
-        }
+            strengthChange = -Input.GetAxis("Mouse Y") * sensitivity;
+            indicatorLevel = GameObject.Find("Power Indicator").GetComponent<Transform>();
 
-        if (Input.GetKeyUp (KeyCode.Space))
+            strength += strengthChange;
+
+            if (strength < minStrength)
+            {
+                difference = Mathf.Abs (strength - minStrength);
+                strength = minStrength;
+            }
+            else if (strength > maxStrength)
+            {
+                difference = - Mathf.Abs (strength - maxStrength);
+                strength = maxStrength;
+            }
+
+            indicatorLevel.position += new Vector3(0, 0.002f * (strengthChange + difference), 0);
+        }
+        
+        else 
         {
             golfball.AddRelativeForce (strength * strengthFactor * Vector3.forward, ForceMode.Impulse);
 

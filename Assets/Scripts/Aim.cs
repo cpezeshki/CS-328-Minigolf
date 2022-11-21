@@ -5,11 +5,11 @@ using UnityEngine;
 public class Aim : MonoBehaviour
 {
     public float sensitivity = 3;
-    // the speed threshold before starting a new turn
-    public float minSpeed = 0.1f;
+    // the velocity threshold before starting a new turn
+    public float minVelocity = 0.05f;
 
-    bool belowMinSpeed;
-    float direction;
+    bool belowMinVelocity;
+    public float direction;
 
     Transform golfball;
 
@@ -17,7 +17,7 @@ public class Aim : MonoBehaviour
 
     void Start()
     {
-        belowMinSpeed = false;
+        belowMinVelocity = false;
         direction = 0;
 
         golfball = GameObject.Find ("Golfball").GetComponent <Transform> ();
@@ -25,13 +25,17 @@ public class Aim : MonoBehaviour
 
     void Update()
     {
-        belowMinSpeed = GameObject.Find ("Golfball").GetComponent <Rigidbody> ().velocity.magnitude < minSpeed;
+        float currentVelocity;
 
-        GameObject.Find ("Aim Indicator").GetComponent <MeshRenderer> ().enabled = belowMinSpeed;
+        currentVelocity = GameObject.Find("Golfball").GetComponent<Rigidbody>().velocity.magnitude;
 
-        if (belowMinSpeed)
+        belowMinVelocity = currentVelocity < minVelocity;
+
+        GameObject.Find ("Aim Indicator").GetComponent <MeshRenderer> ().enabled = belowMinVelocity;
+
+        if (belowMinVelocity)
         {
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetMouseButtonDown (0))
             {
                 gameObject.SetActive(false);
                 mulligen.GetComponent<MulligenScript>().SavePlayerPosition();

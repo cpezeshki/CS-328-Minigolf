@@ -129,7 +129,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sensitivity: 3
-  minSpeed: 0.1
+  minVelocity: 0.05
+  direction: 0
+  mulligen: {fileID: 0}
 --- !u!1 &3985345922720000884
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,6 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e3cf71137377b44eb2cb8143a0bc3c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swings: 0
 --- !u!1 &7002525596148596771
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,9 +355,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2639d39e4068a47a4c7aca0f0bcb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sensitivity: 3
   minStrength: 1
   maxStrength: 100
   strengthFactor: 0.1
+  Aim: {fileID: 1520693215431134567}
 --- !u!1 &7600828354334036373
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,9 +17,10 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = player.transform.position + offset;
-        
+        float golfballRotation = player.transform.rotation.y;
 
+        transform.position = player.transform.position + offset;
+        transform.rotation = Quaternion.Euler (0, golfballRotation, 0);
 
         // if(inputX != 0)
         // {
