@@ -8,7 +8,7 @@ public class SoundTracker : MonoBehaviour
     public AudioSource[] soundFX;
     void Update()
     {
-        if(Input.GetButtonDown("Space"))
+        if(Input.GetMouseButtonDown(0))
         {
             soundFX[0].Play();
         }
