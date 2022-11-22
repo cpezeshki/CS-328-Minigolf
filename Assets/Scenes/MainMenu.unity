@@ -1043,7 +1043,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1978989250}
         m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
-        m_MethodName: StartLevel1
+        m_MethodName: StartLevel3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2121,7 +2121,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1978989250}
         m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
-        m_MethodName: StartLevel1
+        m_MethodName: StartLevel4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3117,6 +3117,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstLevel: Course1-Cutscene
   secondLevel: Course2-Cutscene
+  thirdLevel: Course3
+  fourthLevel: Course4
 --- !u!1 &2046120767
 GameObject:
   m_ObjectHideFlags: 0
