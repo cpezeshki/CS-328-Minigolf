@@ -6,11 +6,19 @@ public class MulligenScript : MonoBehaviour
 {
     public float x,y,z;
     public GameObject player;
-    public bool used = false;
+    public GameObject button;
+    public static bool used = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(DialogueManager.mulligen == true)
+        {
+            button.SetActive(true);
+        }
+        else
+        {
+            button.SetActive(false);
+        }
     }
 
     // Update is called once per frame

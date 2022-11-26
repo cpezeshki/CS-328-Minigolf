@@ -28,6 +28,9 @@ public class Swing : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
+        if(!PauseMenu.isPaused)
+        {
+
         aiming = GameObject.Find ("Aim") != null;
         swinging = GameObject.Find ("Power") != null;
 
@@ -55,6 +58,7 @@ public class Swing : MonoBehaviour
                 // not exactly how swings should be tracked but this is good for now
                 scoreTracker.GetComponent<Scoring>().swings += 1;
             }
+        }
         }
     }
 }

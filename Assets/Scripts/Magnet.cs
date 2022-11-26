@@ -15,9 +15,12 @@ public class Magnet : MonoBehaviour
 
     void FixedUpdate()
     {
-        foreach (Rigidbody b in ball)
+        if(DialogueManager.magnetHole == true)
         {
-            b.AddForce((magnetPoint.position - b.position) * forceFactor * Time.fixedDeltaTime);
+            foreach (Rigidbody b in ball)
+            {
+                b.AddForce((magnetPoint.position - b.position) * forceFactor * Time.fixedDeltaTime);
+            }
         }
     }
 

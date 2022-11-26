@@ -19,6 +19,8 @@ public class DialogueManager : MonoBehaviour
     public bool coroutineRun;
     public bool needWait = false;
     public int val = 0;
+    public static bool mulligen = false;
+    public static bool magnetHole = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -105,9 +107,13 @@ public class DialogueManager : MonoBehaviour
         SceneManager.LoadScene(levelName);  
     }
 
-    void ResumeGame ()
+    public void MagnetHole()
     {
-        Time.timeScale = 1;
+        magnetHole = true;
+    }
+    public void Mulligen()
+    {
+        mulligen = true;
     }
 
 }

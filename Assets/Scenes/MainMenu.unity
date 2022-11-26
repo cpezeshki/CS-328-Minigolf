@@ -3117,8 +3117,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstLevel: Course1-Cutscene
   secondLevel: Course2-Cutscene
-  thirdLevel: Course3
-  fourthLevel: Course4
+  thirdLevel: Course3-Cutscene
+  fourthLevel: Course4-Cutscene
 --- !u!1 &2046120767
 GameObject:
   m_ObjectHideFlags: 0
