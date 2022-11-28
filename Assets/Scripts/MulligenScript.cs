@@ -47,6 +47,7 @@ public class MulligenScript : MonoBehaviour
 
             Vector3 LoadPosition = new Vector3(x,y,z);
             player.transform.position = LoadPosition;
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
             used = true;
         }
     }
