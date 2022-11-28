@@ -10,6 +10,7 @@ public class OutOfBounds : MonoBehaviour
         {
             print("Player out of bounds!");
             GetComponentInChildren<Aim>().mulligen.GetComponent<MulligenScript>().LoadPlayerPosition();
+            MulligenScript.used = false;
         }
     }
 }
