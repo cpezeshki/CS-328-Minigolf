@@ -18,21 +18,19 @@ public class Scoring : MonoBehaviour
     public TextMeshProUGUI text;
 
 >>>>>>> Stashed changes
+
     // Start is called before the first frame update
     void Start()
     {
         swings = 0;
-            text = transform.Find("Text").GetComponent<Text>();
+           
     }
 
     // Update is called once per frame
     void Update()
 <<<<<<< Updated upstream
     { 
-        if (Input.GetMouseButtonDown(0)) {
-			score++;
-			text.text = "SCORE: "+score;
-		}
+        
 	}
 }
 =======
