@@ -510,13 +510,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Course3
+    name: Course 3
     sentences:
-    - 'Wolfie: We are at the half way of the tournament. Time for the next few holes
-      to get tough. You are gonna need your A game!'
-    - 'Hey Reb!: Just go home already.'
-    - 'Wolfie: This hole have some moving objects so be careful! '
-    - 'Hey Reb!: You will only go down from here!'
+    - "Hey Reb!: BOOM! Your score\u2019s as good as your average GPA! You have no
+      chance at winning!\n"
+    - "Wolfie Jr: Quiet! There are still 4 more holes to go. Don\u2019t count us
+      out just yet.\n"
+    - "Hey Reb!: Whatever you say let\u2019s keep this ball rolling.\n"
 --- !u!114 &698989134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1480,11 +1480,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 9204f3a7d79a045f7a2a52c48ae630d1, type: 3}
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1560,8 +1560,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 12
+    m_Font: {fileID: 12800000, guid: 9204f3a7d79a045f7a2a52c48ae630d1, type: 3}
+    m_FontSize: 8
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1

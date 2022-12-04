@@ -10,6 +10,7 @@ public class LevelMenu : MonoBehaviour
     public string secondLevel;
     public string thirdLevel;
     public string fourthLevel;
+    public string fifthLevel;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,19 +43,8 @@ public class LevelMenu : MonoBehaviour
         SceneManager.LoadScene(fourthLevel);
     }
 
-    public void OpenControls()
+     public void StartLevel5()
     {
-
-    }
-
-    public void CloseControls()
-    {
-
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
-        Debug.Log("Quit Game");
+        SceneManager.LoadScene(fifthLevel);
     }
 }

@@ -48,6 +48,7 @@ public class Swing : MonoBehaviour
         {
             if (!aimed && swung)
             {
+                // Scoring.swings += 1;
                 aimController.SetActive (true);
             }
 
