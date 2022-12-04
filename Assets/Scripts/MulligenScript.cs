@@ -19,6 +19,7 @@ public class MulligenScript : MonoBehaviour
         {
             button.SetActive(false);
         }
+        SavePlayerPosition();
     }
 
     // Update is called once per frame

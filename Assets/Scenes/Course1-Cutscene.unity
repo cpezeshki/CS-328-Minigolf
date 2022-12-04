@@ -510,15 +510,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Intro
+    name: Course 1
     sentences:
-    - 'Wolfie: Hey there! My name is Wolfie Jr and welcome to the Wolfpack Tournament.
-      Time for you to face my rival Hey Reb!'
-    - 'Hey Reb!: If this is anything like last years tournament it won''t take me
-      long to beat you!'
-    - 'Wolfie: I am putting my faith in you to win this year. So let us get started
-      with our first hole!'
-    - 'Hey Reb!: I am ready if you are?!'
+    - 'Wolfie Jr: Gosh dang it we lost again in the battle over the Freemont Cannon.
+      We need to figure out a way to get it back.
+
+'
+    - "Hey Reb!: Hahahaha choking on the goal line once again. UNR won\u2019t ever
+      be good enough to beat us. The cannon will be ours forever!\n"
+    - 'Wolfie Jr: What if we change things up this year Hey Reb!?
+
+'
+    - 'Hey Reb!: What do you have in mind Wolfie Jr?
+
+'
+    - 'Wolfie Jr: Mini Golf, 6 rounds best team takes the cannon.
+
+'
+    - 'Hey Reb!: Hahaha you are joking right? All you can do in Vegas is play golf.
+      This will be easy.'
+    - 'Wolfie Jr: So is that a deal then?
+
+'
+    - 'Hey Reb!: Deal. I am ready when you are
+
+'
 --- !u!114 &698989134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1482,11 +1498,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 9204f3a7d79a045f7a2a52c48ae630d1, type: 3}
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1562,11 +1578,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 12
+    m_Font: {fileID: 12800000, guid: 9204f3a7d79a045f7a2a52c48ae630d1, type: 3}
+    m_FontSize: 8
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
