@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 1637133716729628039}
   - component: {fileID: 2597639041927495443}
   - component: {fileID: 5226826722937806749}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Score Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,11 +630,11 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7600828354334036373}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4ec8795337d376a4daafdae3af654205, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.075
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8427790381708141116
 Rigidbody:
@@ -644,9 +644,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7600828354334036373}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.25
+  m_Drag: 1
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0

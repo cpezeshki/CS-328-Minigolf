@@ -11,6 +11,7 @@ public class Aim : MonoBehaviour
 
     bool belowMinVelocity;
     public float direction;
+    float pastVelocity = 0;
 
     Transform golfball;
 
@@ -30,10 +31,12 @@ public class Aim : MonoBehaviour
 
         currentVelocity = GameObject.Find("Golfball").GetComponent<Rigidbody>().velocity.magnitude;
 
-        belowMinVelocity = currentVelocity < minVelocity;
+        belowMinVelocity = currentVelocity < minVelocity && pastVelocity < minVelocity;
 
         GameObject.Find ("Aim Indicator").GetComponent <MeshRenderer> ().enabled = belowMinVelocity;
         GameObject.Find ("Score Display").GetComponent<MeshRenderer>().enabled = belowMinVelocity;
+
+        pastVelocity = currentVelocity;
 
         if (belowMinVelocity)
         {
