@@ -26,6 +26,7 @@ public class Power : MonoBehaviour
     {
         float strengthChange;
         float difference;
+        float indicatorScale;
 
         Transform indicatorLevel;
         golfball.rotation = Quaternion.Euler(0, Aim.GetComponent <Aim> ().direction, 0);
@@ -36,6 +37,7 @@ public class Power : MonoBehaviour
         {
             strengthChange = -Input.GetAxis("Mouse Y") * sensitivity;
             indicatorLevel = GameObject.Find("Power Indicator").GetComponent<Transform>();
+            indicatorScale = maxStrength / 100;
 
             strength += strengthChange;
 
@@ -50,7 +52,7 @@ public class Power : MonoBehaviour
                 strength = maxStrength;
             }
 
-            indicatorLevel.position += new Vector3(0, 0.002f * (strengthChange + difference), 0);
+            indicatorLevel.position += new Vector3(0, 0.002f * ((strengthChange + difference) / indicatorScale), 0);
         }
         
         else 
