@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Aim : MonoBehaviour
 {
@@ -32,10 +33,11 @@ public class Aim : MonoBehaviour
         belowMinVelocity = currentVelocity < minVelocity;
 
         GameObject.Find ("Aim Indicator").GetComponent <MeshRenderer> ().enabled = belowMinVelocity;
+        GameObject.Find ("Score Display").GetComponent<MeshRenderer>().enabled = belowMinVelocity;
 
         if (belowMinVelocity)
         {
-            if (Input.GetMouseButtonDown (0))
+            if (Input.GetMouseButtonDown (0) && !cursorOnUI())
             {
                 gameObject.SetActive(false);
                 mulligen.GetComponent<MulligenScript>().SavePlayerPosition();
@@ -49,5 +51,34 @@ public class Aim : MonoBehaviour
         }
     }
 
-    
+    // https://forum.unity.com/threads/how-to-detect-if-mouse-is-over-ui.1025533/#post-6642844
+    bool cursorOnUI()
+    {
+        int layer = LayerMask.NameToLayer("UI");
+        List<RaycastResult> raycasts = raycastAtCursor();
+
+        for (int index = 0; index < raycasts.Count; index += 1)
+        {
+            RaycastResult currentRaycast = raycasts[index];
+
+            if (currentRaycast.gameObject.layer == layer)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    List<RaycastResult> raycastAtCursor()
+    {
+        List<RaycastResult> raycasts = new();
+        PointerEventData data = new(EventSystem.current);
+
+        data.position = Input.mousePosition;
+
+        EventSystem.current.RaycastAll(data, raycasts);
+
+        return raycasts;
+    }
 }
