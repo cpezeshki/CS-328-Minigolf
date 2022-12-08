@@ -5707,7 +5707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1142852378dd142b5cf83493bc83b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSelect: MainMenu
+  levelSelect: Course3-Cutscene
 --- !u!135 &1398123301
 SphereCollider:
   m_ObjectHideFlags: 0

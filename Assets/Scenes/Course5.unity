@@ -2069,6 +2069,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 291cf3a5377c28e4c8ae32dd5f2e4aaf, type: 3}
+--- !u!1 &404300611 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2156411674855815843, guid: 291cf3a5377c28e4c8ae32dd5f2e4aaf, type: 3}
+  m_PrefabInstance: {fileID: 404300610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &404300612
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404300611}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.17500019
+  m_Center: {x: 0.000015258789, y: -0.039510045, z: 0.0000014305115}
+--- !u!114 &404300613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404300611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1142852378dd142b5cf83493bc83b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelSelect: Course6-Cutscene
 --- !u!1 &411169388
 GameObject:
   m_ObjectHideFlags: 0
@@ -3675,6 +3706,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94431755f39c81646a8eb3708b14a366, type: 3}
+--- !u!1 &574375232 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3721638963245224060, guid: 94431755f39c81646a8eb3708b14a366, type: 3}
+  m_PrefabInstance: {fileID: 574375231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &574375233
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574375232}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.17500019
+  m_Center: {x: 0.000015258789, y: -0.039510045, z: 0.0000014305115}
+--- !u!114 &574375234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574375232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1142852378dd142b5cf83493bc83b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelSelect: Course6-Cutscene
 --- !u!1 &581661155
 GameObject:
   m_ObjectHideFlags: 0
