@@ -210,7 +210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 162343989674011892, guid: ee74d3d91aa80854faae3222dc3ba364, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.535
+      value: 1.54
       objectReference: {fileID: 0}
     - target: {fileID: 162343989674011892, guid: ee74d3d91aa80854faae3222dc3ba364, type: 3}
       propertyPath: m_LocalPosition.z
@@ -454,7 +454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1984484934829106563, guid: 0f384878998d28744afecf0470fda6cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.12499952
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1984484934829106563, guid: 0f384878998d28744afecf0470fda6cf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -761,7 +761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4226161718313729677, guid: 1a99c7a60a2acb241b2136d92ffe1055, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.049999714
+      value: 0.05000019
       objectReference: {fileID: 0}
     - target: {fileID: 4226161718313729677, guid: 1a99c7a60a2acb241b2136d92ffe1055, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2790,7 +2790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9157099777193693848, guid: ca3652aaefa3cc145b01e3ccf4d923aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.049999714
+      value: 0.05000019
       objectReference: {fileID: 0}
     - target: {fileID: 9157099777193693848, guid: ca3652aaefa3cc145b01e3ccf4d923aa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3982,11 +3982,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7594147990881585420, guid: c6ca41d6bdc5bf2498cd212b04adcfe0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.049999237
+      value: 0.05000019
       objectReference: {fileID: 0}
     - target: {fileID: 7594147990881585420, guid: c6ca41d6bdc5bf2498cd212b04adcfe0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.91
+      value: 8.89
       objectReference: {fileID: 0}
     - target: {fileID: 7594147990881585420, guid: c6ca41d6bdc5bf2498cd212b04adcfe0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5075,7 +5075,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186047277}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.15
@@ -5330,7 +5330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3198317130546139280, guid: 6d7e3e3c825248b4f8ac8781ba801f9a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.050001144
+      value: 0.05000019
       objectReference: {fileID: 0}
     - target: {fileID: 3198317130546139280, guid: 6d7e3e3c825248b4f8ac8781ba801f9a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7092,7 +7092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6681931335910979758, guid: f9764004e89200d42b8b42478abb2c96, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.92
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6681931335910979758, guid: f9764004e89200d42b8b42478abb2c96, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8075,7 +8075,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e274f7c4551c01a4a96b31bfc8609c5e, type: 2}
+  - {fileID: 2100000, guid: b7871fcbfffa27a49b594c3f92565ee5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8716,7 +8716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7594147990881585420, guid: c6ca41d6bdc5bf2498cd212b04adcfe0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.5
+      value: 18.977
       objectReference: {fileID: 0}
     - target: {fileID: 7594147990881585420, guid: c6ca41d6bdc5bf2498cd212b04adcfe0, type: 3}
       propertyPath: m_LocalPosition.y
