@@ -7,7 +7,9 @@ public class tutorialScript : MonoBehaviour
     public GameObject instruction1, instruction2, instruction3;
     public float waitTime = 0.4f;
     public static bool GameIsPaused = false;
-    public bool instruction1Shown = false;
+    private bool instruction1Shown = false;
+    /*private bool instruction2Shown = false;
+    private bool instruction3Shown = false;*/
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,13 @@ public class tutorialScript : MonoBehaviour
     void showInstruction2()
     {
         instruction2.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+    }
+
+    void showInstruction3()
+    {
+        instruction3.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }

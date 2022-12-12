@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelMenu : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
 
     public string firstLevel;
@@ -11,6 +11,7 @@ public class LevelMenu : MonoBehaviour
     public string thirdLevel;
     public string fourthLevel;
     public string fifthLevel;
+    public string sixthLevel;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,5 +47,9 @@ public class LevelMenu : MonoBehaviour
      public void StartLevel5()
     {
         SceneManager.LoadScene(fifthLevel);
+    }
+    public void StartLevel6()
+    {
+        SceneManager.LoadScene(sixthLevel);
     }
 }
