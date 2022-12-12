@@ -13,7 +13,6 @@ public class Aim : MonoBehaviour
     float pastVelocity = 0;
 
     Transform golfball;
-
     public GameObject mulligen;
 
     void Start()
@@ -21,6 +20,7 @@ public class Aim : MonoBehaviour
         belowMinVelocity = false;
 
         golfball = GameObject.Find ("Golfball").GetComponent <Transform> ();
+        mulligen = GameObject.Find("MulligenObject");
     }
 
     void Update()

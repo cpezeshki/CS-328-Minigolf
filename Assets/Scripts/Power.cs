@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Power : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class Power : MonoBehaviour
     float originalLevel;
 
     Rigidbody golfball;
-    Transform indicatorLevel;
+    TextMeshPro display;
     Quaternion originalRotation;
 
     void Start ()
@@ -27,16 +28,13 @@ public class Power : MonoBehaviour
     private void OnEnable()
     {
         originalRotation = golfball.transform.rotation;
-        originalLevel = indicatorLevel.transform.localPosition.y;
         strength = minStrength;
-        indicatorLevel.position += new Vector3(0, originalLevel, 0);
     }
 
     void Update ()
     {
         float strengthChange;
         float difference;
-        float indicatorScale;
 
         difference = 0;
 
@@ -46,8 +44,7 @@ public class Power : MonoBehaviour
         if (!Input.GetMouseButtonUp (0))
         {
             strengthChange = -Input.GetAxis("Mouse Y") * sensitivity;
-            indicatorLevel = GameObject.Find("Power Indicator").GetComponent<Transform>();
-            indicatorScale = maxStrength / 100;
+            display = GameObject.Find("Power Display").GetComponent<TextMeshPro>();
 
             strength += strengthChange;
 
@@ -62,7 +59,7 @@ public class Power : MonoBehaviour
                 strength = maxStrength;
             }
 
-            indicatorLevel.position += new Vector3(0, 0.002f * ((strengthChange + difference) / indicatorScale), 0);
+            display.text = ((int) ((strength / maxStrength) * 100)).ToString() + "%";
         }
         
         else 
