@@ -5,12 +5,15 @@ using UnityEngine;
 public class MulligenScript : MonoBehaviour
 {
     public float x,y,z;
-    public GameObject player;
-    public GameObject button;
+    GameObject player;
+    GameObject button;
     public static bool used = false;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Golfball");
+        button = GameObject.Find("Mulligen");
+
         if(DialogueManager.mulligen == true)
         {
             button.SetActive(true);

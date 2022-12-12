@@ -23,11 +23,5 @@ public class Scoring : MonoBehaviour
     {
         text.text = swings.ToString();
     }
-
-    // public void increment()
-    // {
-    //     swings += 1;
-    //     text.text = "Total Strokes: " + swings.ToString();
-    // }
 }
 

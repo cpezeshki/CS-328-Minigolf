@@ -10,7 +10,6 @@ public class Aim : MonoBehaviour
     public float minVelocity = 0.05f;
 
     bool belowMinVelocity;
-    public float direction;
     float pastVelocity = 0;
 
     Transform golfball;
@@ -20,7 +19,6 @@ public class Aim : MonoBehaviour
     void Start()
     {
         belowMinVelocity = false;
-        direction = 0;
 
         golfball = GameObject.Find ("Golfball").GetComponent <Transform> ();
     }
@@ -48,9 +46,7 @@ public class Aim : MonoBehaviour
 
             GameObject.Find ("Golfball").GetComponent <Rigidbody> ().velocity = Vector3.zero;
 
-            direction += Input.GetAxis ("Mouse X") * sensitivity;
-
-            golfball.rotation = Quaternion.Euler (0, direction, 0);
+            golfball.LookAt(cursorLocation());
         }
     }
 
@@ -83,5 +79,20 @@ public class Aim : MonoBehaviour
         EventSystem.current.RaycastAll(data, raycasts);
 
         return raycasts;
+    }
+
+    Vector3 cursorLocation()
+
+    { 
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 100))
+        {
+            Debug.Log(hit.transform.name);
+            Debug.Log("hit");
+        }
+
+        return hit.point;
     }
 }

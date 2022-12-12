@@ -4,22 +4,32 @@ using UnityEngine;
 
 public class Power : MonoBehaviour
 {
-    public float sensitivity = 3;
+    float sensitivity;
     public int minStrength = 1;
     public int maxStrength = 100;
-    public float strengthFactor = 0.1f;
-
-    public GameObject Aim;
+    float strengthFactor = 0.1f;
 
     float strength;
+    float originalLevel;
 
     Rigidbody golfball;
+    Transform indicatorLevel;
+    Quaternion originalRotation;
 
     void Start ()
     {
+        sensitivity = (maxStrength - minStrength) / 33;
         strength = minStrength;
 
         golfball = GetComponentInParent <Rigidbody> ();
+    }
+
+    private void OnEnable()
+    {
+        originalRotation = golfball.transform.rotation;
+        originalLevel = indicatorLevel.transform.localPosition.y;
+        strength = minStrength;
+        indicatorLevel.position += new Vector3(0, originalLevel, 0);
     }
 
     void Update ()
@@ -28,10 +38,10 @@ public class Power : MonoBehaviour
         float difference;
         float indicatorScale;
 
-        Transform indicatorLevel;
-        golfball.rotation = Quaternion.Euler(0, Aim.GetComponent <Aim> ().direction, 0);
-
         difference = 0;
+
+        // prevent spinning on walls while swinging
+        golfball.rotation = originalRotation;
 
         if (!Input.GetMouseButtonUp (0))
         {

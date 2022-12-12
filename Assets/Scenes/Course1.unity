@@ -4292,8 +4292,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  player: {fileID: 767200092}
-  button: {fileID: 658507243}
 --- !u!4 &733573260
 Transform:
   m_ObjectHideFlags: 0
@@ -4769,10 +4767,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6106881201372344598, guid: de45e01916b672a4cbe8cbd2a7626360, type: 3}
-      propertyPath: mulligen
-      value: 
-      objectReference: {fileID: 733573258}
     - target: {fileID: 7600828354334036373, guid: de45e01916b672a4cbe8cbd2a7626360, type: 3}
       propertyPath: m_Name
       value: Golfball
@@ -4782,11 +4776,6 @@ PrefabInstance:
 --- !u!4 &767200091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5600847202973166580, guid: de45e01916b672a4cbe8cbd2a7626360, type: 3}
-  m_PrefabInstance: {fileID: 767200090}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &767200092 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7600828354334036373, guid: de45e01916b672a4cbe8cbd2a7626360, type: 3}
   m_PrefabInstance: {fileID: 767200090}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &784271842
@@ -6965,10 +6954,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 954271794919033076, guid: f9764004e89200d42b8b42478abb2c96, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.27
-      objectReference: {fileID: 0}
     - target: {fileID: 4808108366095901722, guid: f9764004e89200d42b8b42478abb2c96, type: 3}
       propertyPath: m_Name
       value: Out of Bounds
@@ -6977,25 +6962,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6517034483975671903, guid: f9764004e89200d42b8b42478abb2c96, type: 3}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6681931335910979758, guid: f9764004e89200d42b8b42478abb2c96, type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6681931335910979758, guid: f9764004e89200d42b8b42478abb2c96, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6681931335910979758, guid: f9764004e89200d42b8b42478abb2c96, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6681931335910979758, guid: f9764004e89200d42b8b42478abb2c96, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6681931335910979758, guid: f9764004e89200d42b8b42478abb2c96, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7003,7 +6972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6681931335910979758, guid: f9764004e89200d42b8b42478abb2c96, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.35
+      value: -0.378
       objectReference: {fileID: 0}
     - target: {fileID: 6681931335910979758, guid: f9764004e89200d42b8b42478abb2c96, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11878,7 +11847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f8e7b6239bc4167a3c859967018fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 767200092}
+  sensitivity: 100
 --- !u!4 &1866677144
 Transform:
   m_ObjectHideFlags: 0
