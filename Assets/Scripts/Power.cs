@@ -11,11 +11,14 @@ public class Power : MonoBehaviour
     float strengthFactor = 0.1f;
     public float shakeMagnitude = 0.05f;
     public float shakeTime = 0.5f;
-    Vector3 cameraInitialPosition;
+    //Vector3 cameraInitialPosition;
 
     float strength;
+    /*
     float originalLevel;
     float defaultShake;
+    float originalOffsetY;
+    */
 
     Rigidbody golfball;
     TextMeshPro display;
@@ -29,9 +32,9 @@ public class Power : MonoBehaviour
         sensitivity = (maxStrength - minStrength) / 33;
         strength = minStrength;
         cameraYPos = mainCamera.transform.position.y;
-        defaultShake = shakeMagnitude;
+        //defaultShake = shakeMagnitude;
         golfball = GetComponentInParent <Rigidbody> ();
-
+        //originalOffsetY = mainCamera.transform.position.y - golfball.transform.position.y;
     }
 
     private void OnEnable()
@@ -43,9 +46,6 @@ public class Power : MonoBehaviour
     void LateUpdate ()
     {
         float strengthChange;
-        float difference;
-
-        difference = 0;
 
         // prevent spinning on walls while swinging
         golfball.rotation = originalRotation;
@@ -59,12 +59,10 @@ public class Power : MonoBehaviour
 
             if (strength < minStrength)
             {
-                difference = Mathf.Abs (strength - minStrength);
                 strength = minStrength;
             }
             else if (strength > maxStrength)
             {
-                difference = - Mathf.Abs (strength - maxStrength);
                 strength = maxStrength;
             }
 
@@ -73,13 +71,14 @@ public class Power : MonoBehaviour
         
         else 
         {
-            ShakeIt();
+            //ShakeIt();
             golfball.AddRelativeForce (strength * strengthFactor * Vector3.forward, ForceMode.Impulse);
             //mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, , mainCamera.transform.position.z);
             gameObject.SetActive (false);
         }
     }
 
+    /*
     private void ShakeIt()
 	{
 		cameraInitialPosition = mainCamera.transform.position;
@@ -101,8 +100,8 @@ public class Power : MonoBehaviour
 
 	void StopCameraShaking()
 	{
-        cameraInitialPosition.x = mainCamera.transform.position.x;
-        cameraInitialPosition.z = mainCamera.transform.position.z;
+        mainCamera.transform.position = cameraInitialPosition;
 		CancelInvoke ("StartCameraShaking");
 	}
+    */
 }
